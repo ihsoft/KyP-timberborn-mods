@@ -34,9 +34,8 @@ namespace DraggableUtils.Configurators
             public BottomBarModule Get()
             {
                 BottomBarModule.Builder builder = new BottomBarModule.Builder();
-                // FIXME(ihsoft): Index 8 is taken. Find a way for checking it before adding. 
-                //builder.AddLeftSectionElement((IBottomBarElementProvider) this._draggableToolButtons, 8);
-                builder.AddRightSectionElement((IBottomBarElementProvider) this._draggableToolButtons);
+                // The index space [10000; 10010) in the "blue area" is now claimed. Don't add your tool groups there!
+                builder.AddLeftSectionElement((IBottomBarElementProvider) this._draggableToolButtons, 10000);
                 return builder.Build();
             }
         }
