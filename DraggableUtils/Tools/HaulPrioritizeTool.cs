@@ -56,7 +56,7 @@ namespace DraggableUtils.Tools
         {
             return blockObjects.Where((bo =>
             {
-                HaulPrioritizable component = bo.GetComponent<HaulPrioritizable>();
+                HaulPrioritizable component = bo.GetComponentFast<HaulPrioritizable>();
                 return component != null && component.enabled;
             }));
         }
@@ -70,7 +70,7 @@ namespace DraggableUtils.Tools
         {
             foreach (BlockObject blockObject in blockObjects)
             {
-                HaulPrioritizable component = blockObject.GetComponent<HaulPrioritizable>();
+                HaulPrioritizable component = blockObject.GetComponentFast<HaulPrioritizable>();
                 if (component == null || !component.enabled)
                     continue;
                 

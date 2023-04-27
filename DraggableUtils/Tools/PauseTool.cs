@@ -2,11 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Timberborn.AreaSelectionSystem;
 using Timberborn.BlockSystem;
-using Timberborn.Buildings;
+using Timberborn.BuildingsBlocking;
 using Timberborn.EntitySystem;
-using Timberborn.GameDistricts;
 using Timberborn.InputSystem;
-using Timberborn.InventorySystem;
 using Timberborn.Localization;
 using Timberborn.ToolSystem;
 using UnityEngine;
@@ -61,7 +59,7 @@ namespace DraggableUtils.Tools
         {
             return blockObjects.Where((bo =>
             {
-                PausableBuilding component = bo.GetComponent<PausableBuilding>();
+                PausableBuilding component = bo.GetComponentFast<PausableBuilding>();
                 return component != null && component.enabled && component.IsPausable();
             }));
         }
@@ -75,7 +73,7 @@ namespace DraggableUtils.Tools
         {
             foreach (BlockObject blockObject in blockObjects)
             {
-                PausableBuilding component = blockObject.GetComponent<PausableBuilding>();
+                PausableBuilding component = blockObject.GetComponentFast<PausableBuilding>();
                 if (component == null || !component.IsPausable())
                     continue;
 

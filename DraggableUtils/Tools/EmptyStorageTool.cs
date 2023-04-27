@@ -56,7 +56,7 @@ namespace DraggableUtils.Tools
         {
             return blockObjects.Where((bo =>
             {
-                Emptiable component = bo.GetComponent<Emptiable>();
+                Emptiable component = bo.GetComponentFast<Emptiable>();
                 return component != null && component.enabled;
             }));
         }
@@ -70,7 +70,7 @@ namespace DraggableUtils.Tools
         {
             foreach (BlockObject blockObject in blockObjects)
             {
-                Emptiable component = blockObject.GetComponent<Emptiable>();
+                Emptiable component = blockObject.GetComponentFast<Emptiable>();
                 if (component == null || !component.enabled)
                     continue;
                 

@@ -2,10 +2,13 @@ using Bindito.Core;
 using DraggableUtils.Buttons;
 using DraggableUtils.Factorys;
 using DraggableUtils.Tools;
+using TimberApi.ConfiguratorSystem;
+using TimberApi.SceneSystem;
 using Timberborn.BottomBarSystem;
 
 namespace DraggableUtils.Configurators
 {
+    [Configurator(SceneEntrypoint.InGame)]
     public class DraggableUtilsConfigurator : IConfigurator
     {
         public void Configure(IContainerDefinition containerDefinition)
