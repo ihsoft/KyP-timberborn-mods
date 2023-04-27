@@ -34,7 +34,9 @@ namespace DraggableUtils.Configurators
             public BottomBarModule Get()
             {
                 BottomBarModule.Builder builder = new BottomBarModule.Builder();
-                builder.AddLeftSectionElement((IBottomBarElementProvider) this._draggableToolButtons, 8);
+                // FIXME(ihsoft): Index 8 is taken. Find a way for checking it before adding. 
+                //builder.AddLeftSectionElement((IBottomBarElementProvider) this._draggableToolButtons, 8);
+                builder.AddRightSectionElement((IBottomBarElementProvider) this._draggableToolButtons);
                 return builder.Build();
             }
         }
