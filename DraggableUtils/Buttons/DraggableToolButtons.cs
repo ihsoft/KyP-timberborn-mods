@@ -39,6 +39,7 @@ namespace DraggableUtils.Buttons
         
         public BottomBarElement GetElement()
         {
+            _draggableUtilsGroup.LoadIcon(_assetLoader);
             ToolGroupButton blue = this._toolGroupButtonFactory.CreateBlue((ToolGroup) this._draggableUtilsGroup);
 
             //Pause buildings
