@@ -1032,6 +1032,7 @@
         <Compile Include="Tools\EmptyStorageTool.cs" />
         <Compile Include="Tools\HaulPrioritizeTool.cs" />
         <Compile Include="Tools\PauseTool.cs" />
+        <Compile Include="Utils\ReflectedField.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="Localization\enUS.txt" />
